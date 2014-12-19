@@ -30,15 +30,15 @@ angular.module('nationalMapApp')
         }
       });
 
-      // Well.getWell = function(options) {
-      //   console.log('options', options);
+      Well.getWell = function(options) {
+        console.log('options', options);
 
-      //   var promise = Well.get(options).$promise.then(function(response) {
-      //     return response;
-      //   });
+        var promise = Well.get(options).$promise.then(function(response) {
+          return response;
+        });
 
-      //   return promise;
-      // };
+        return promise;
+      };
 
       return Well;
 

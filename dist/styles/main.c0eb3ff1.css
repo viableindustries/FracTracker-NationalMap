@@ -5804,7 +5804,8 @@ a .icon.icon-help {
 
 
 .leaflet-map-pane .leaflet-popup .leaflet-popup-content {
-  margin: 8px 16px 9px;
+  margin: 16px;
+  padding: 0;
 }
 
 
@@ -5812,7 +5813,7 @@ a .icon.icon-help {
   font-size: 14px;
   font-weight: 600;
   line-height: 1.2;
-  margin: 8px 0;
+  margin: 0;
 }
 
 

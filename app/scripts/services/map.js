@@ -18,7 +18,7 @@ angular.module('nationalMapApp')
         defaults: {
           scrollWheelZoom: false,
           zoomControl: false,
-          maxZoom: 20
+          maxZoom: 18
         },
         layers: {
           baselayers: {

@@ -78,6 +78,14 @@ angular.module('nationalMapApp')
         lng: lng
       }, zoom);
 
+      $scope.$on('leafletDirectiveMarker.mouseover', function(event, args) {
+        args.leafletEvent.target.openPopup();
+      });
+
+      $scope.$on('leafletDirectiveMarker.mouseout', function(event, args) {
+        args.leafletEvent.target.closePopup();
+      });
+      
       $scope.$on('leafletDirectiveMarker.click', function(event, args) {
         $location.path($scope.map.markers[args.markerName].permalink);
       });

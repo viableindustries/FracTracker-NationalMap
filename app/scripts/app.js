@@ -35,7 +35,7 @@ angular
         controller: 'WellCtrl',
         resolve: {
           well: function(Well, $route) {
-            return Well.get({
+            return Well.getWell({
               storage: variables.wells.storage,
               featureId: $route.current.params.featureId
             });
