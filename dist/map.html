@@ -1,0 +1,26 @@
+<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <title>UTFGrid interactivity from multiple layers</title> <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"> <script src="https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js"></script> <link href="https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css" rel="stylesheet"> <style>body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }</style>  <body> <div id="map" class="dark"></div> <script>L.mapbox.accessToken = 'pk.eyJ1IjoiZGV2ZWxvcGVkc2ltcGxlIiwiYSI6IkFWaGZPVUEifQ.JuZ21Q5vqECOkOwdCgIl6g';
+  
+  var map = L.mapbox.map('map', 'developedsimple.khc9mj09', {
+        attributionControl: false,
+        infoControl: false
+      });
+
+  // Pulling multiple layers of interactivity isn't too tricky, it
+  // just requires that you don't use compositing, and instead add each
+  // layer as its components: a tileLayer, a gridLayer, and a gridControl
+  var wellTiles = L.mapbox.tileLayer('developedsimple.b3a9ad79').addTo(map);
+
+  var wellGrid = L.mapbox.gridLayer('developedsimple.b3a9ad79').addTo(map);
+
+  // var wellControl = L.mapbox.gridControl(wellGrid).addTo(map);
+
+
+  wellGrid.on('mouseover', function (e) {
+      // if (e.data) {
+      //   document.getElementById('hover').innerHTML = 'hover: ' + e.data.admin;
+      // } else {
+      //   document.getElementById('hover').innerHTML = 'hover: nothing';
+      // }
+      console.log('mouseover: ' + e.data);
+    });</script>  
