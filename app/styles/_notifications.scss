@@ -1,0 +1,19 @@
+.notifications {
+  background-color: lighten($color-white-base, 25%);
+  border: 1px solid darken($color-white-base, 25%);
+  margin: 16px 0;
+  padding: 16px;
+
+  .notification {
+
+    .icon {
+      font-size: 32px;
+    }
+    
+    p {
+      font-family: $font-sans-plain;
+      font-weight: 300;
+    }
+
+  }
+}
