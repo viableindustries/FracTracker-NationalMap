@@ -7,12 +7,42 @@
  * # MainCtrl
  * Controller of the nationalMapApp
  */
+ /*global L:false */
 angular.module('nationalMapApp')
   .controller('MainCtrl', ['$scope', '$http', '$location', 'Site', 'Map', 'leafletData', 'leafletEvents', function ($scope, $http, $location, Site, Map, leafletData, leafletEvents) {
 
     $scope.settings = Site.settings();
 
     $scope.map = Map.create();
+
+    $scope.searchTypes = [
+      {
+        name: 'Location'
+      },
+      {
+        name: 'Well Name'
+      },
+      {
+        name: 'API Number'
+      }
+    ];
+
+    $scope.searchBy = $scope.searchTypes[0].name;
+
+    $scope.selectSearchBy = function(searchBy) {
+      $scope.searchBy = searchBy;
+    };
+
+    //Check to make sure the user isn't at a property already. In effect, this only shows the modal when a user comes directly to
+    //the root/home page of the site. Otherwise, the search modal will pop up every time the page is reloaded, even if
+    //they've already searched for their property.
+    if(Object.getOwnPropertyNames($location.search()).length === 0){
+      $scope.showModal = true;
+    }
+
+    $scope.close = function(){
+      $scope.showModal = false;
+    };
 
     $scope.map.update = function(map) {
         var _zoom = map.getZoom();
@@ -38,12 +68,12 @@ angular.module('nationalMapApp')
             // on the map is clickable from an unrecognizable zoom level. We set the $scope.map.markers
             // variable to be an empty object to disable the interaction.
             //
-            angular.copy($scope.map.markers, $scope.tmp)
+            angular.copy($scope.map.markers, $scope.tmp);
             $scope.map.markers = {};
             break;
           default:
             if ($scope.tmp !== undefined) {
-              angular.copy($scope.tmp, $scope.map.markers)
+              angular.copy($scope.tmp, $scope.map.markers);
             }
 
             var bounds = map.getBounds();
@@ -74,7 +104,7 @@ angular.module('nationalMapApp')
           lng = (defaults.lng) ? defaults.lng : -96.812;
 
       map.setView({
-        lat: lat, 
+        lat: lat,
         lng: lng
       }, zoom);
 
@@ -85,7 +115,7 @@ angular.module('nationalMapApp')
       $scope.$on('leafletDirectiveMarker.mouseout', function(event, args) {
         args.leafletEvent.target.closePopup();
       });
-      
+
       $scope.$on('leafletDirectiveMarker.click', function(event, args) {
         $location.path($scope.map.markers[args.markerName].permalink);
       });
@@ -106,11 +136,6 @@ angular.module('nationalMapApp')
       new L.Control.Zoom({
         position: 'bottomright'
       }).addTo(map);
-
-      map.addControl(L.mapbox.geocoderControl('mapbox.places-v1', {
-          autocomplete: true,
-          keepOpen: true
-      }));
 
     });
 

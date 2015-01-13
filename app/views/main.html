@@ -1,2 +1,70 @@
+<header class="container" data-ng-if="!showModal">
+	<div class="row">
+		<div class="column-3">
+			<img src="/images/logo-FracTracker-mono.png" alt="FracTracker" />
+		</div>
+		<div class="column-6">
+		</div>
+		<div class="column-5">
+			<form>
+				<geocoder map="map" close="close"/>
+			</form>
+		</div>
+		<div class="column-2">
+			<form>
+				<input class="search-type" type="text" placeholder="Location" required>
+			</form>
+		</div>
+	</div>
+</header>
+
+<section class="modal" data-ng-if="showModal">
+	<article class="modal-content container">
+		<div class="row">
+			<div class="column-6">
+				<img src="/images/logo-FracTracker-mono.png" alt="FracTracker" />
+			</div>
+			<div class="column-9">
+			</div>
+			<div class="column-1">
+				<i class="fa fa-times" data-ng-click="close()"></i>
+			</div>
+		</div>
+		<div class="row modal-text">
+			<div class="column-1">
+			</div>
+			<div class="column-14">
+				<p>Well Communities is an open platform supporting research, collaboration and public participation to safeguard communities from the impacts of oil and gas extraction.</p>
+				<p class="subhead">A sentence or two on how the user can use this tool to learn more about the landscape that is being created around them through the oil and gas industry, it's use of natural resources and the impacts it may be having on the community they belong to. We should include a prompt here encouraging the user to drill down into the content to find more.</p>
+			</div>
+			<div class="column-1">
+			</div>
+		</div>
+		<div class="row">
+			<div class="column-3">
+			</div>
+			<div class="column-7">
+				<geocoder map="map" close="close"/>
+			</div>
+			<div class="column-3">
+				<form class="form">
+					<div class="type">
+						<div class="input-group">
+							<input data-ng-model="searchBy" data-ng-focus="showDropdown = true" data-ng-blur="showDropdown = false" class="search-type" type="text" placeholder="Location" required>
+							<img src="/images/down_arrow.png" />
+						</div>
+						<div data-ng-if="showDropdown" class="dropdown">
+						    <ul>
+						      <li data-ng-repeat="type in searchTypes" data-ng-if="type.name != searchBy"><a data-ng-mousedown="selectSearchBy(type.name)">{{ type.name }}</a></li>
+						    </ul>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="column-3">
+			</div>
+		</div>
+	</article>
+</section>
 
 <leaflet class="map" defaults="map.defaults" layers="map.layers" markers="map.markers"></leaflet>
