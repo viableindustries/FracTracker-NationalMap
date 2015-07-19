@@ -1,7 +1,13 @@
-<header class="container" data-ng-if="!showModal">
+<header class="container site-header" data-ng-if="!showModal">
 	<div class="row">
 		<div class="column-3">
 			<img src="/images/logo-FracTracker-mono.png" alt="FracTracker" />
+ 				<!-- <div class="site-title">
+					<img src="/images/icon-WellCommunities.svg" width="256" alt="Well Communities Identity" />
+					<h1>
+						Well <span>Communities</span>
+					</h1>
+				</div> -->
 		</div>
 		<div class="column-6">
 		</div>
@@ -20,7 +26,7 @@
 
 <section class="modal" data-ng-if="showModal">
 	<article class="modal-content container">
-		<div class="row">
+		<!-- <div class="row">
 			<div class="column-6">
 				<img src="/images/logo-FracTracker-mono.png" alt="FracTracker" />
 			</div>
@@ -29,13 +35,23 @@
 			<div class="column-1">
 				<i class="fa fa-times" data-ng-click="close()"></i>
 			</div>
-		</div>
-		<div class="row modal-text">
+		</div> -->
+
+ 		<div class="row modal-text">
 			<div class="column-1">
 			</div>
-			<div class="column-14">
-				<p>Well Communities is an open platform supporting research, collaboration and public participation to safeguard communities from the impacts of oil and gas extraction.</p>
-				<p class="subhead">A sentence or two on how the user can use this tool to learn more about the landscape that is being created around them through the oil and gas industry, it's use of natural resources and the impacts it may be having on the community they belong to. We should include a prompt here encouraging the user to drill down into the content to find more.</p>
+			<div class="column-14 align-center">
+<!-- 				<img src="/images/logo-WellCommunities.png" width="256" alt="Well Communities Identity" />
+ -->
+ 				<div class="site-title">
+					<img src="/images/icon-WellCommunities.svg" width="256" alt="Well Communities Identity" />
+					<h1>
+						Well <span>Communities</span>
+					</h1>
+				</div>
+				<p>
+					Well Communities is an open platform supporting research, collaboration and public participation to safeguard communities from the impacts of oil and gas extraction.
+				</p>
 			</div>
 			<div class="column-1">
 			</div>
@@ -50,9 +66,14 @@
 				<form class="form">
 					<div class="type">
 						<div class="input-group">
-							<input data-ng-model="searchBy" data-ng-focus="showDropdown = true" data-ng-blur="showDropdown = false" class="search-type" type="text" placeholder="Location" required>
+							<select class="form-control">
+								<option>Location</option>
+								<option>Well Name</option>
+								<option>API</option>
+							</select>
+<!-- 							<input data-ng-model="searchBy" data-ng-focus="showDropdown = true" data-ng-blur="showDropdown = false" class="search-type" type="text" placeholder="Location" required>
 							<img src="/images/down_arrow.png" />
-						</div>
+ -->						</div>
 						<div data-ng-if="showDropdown" class="dropdown">
 						    <ul>
 						      <li data-ng-repeat="type in searchTypes" data-ng-if="type.name != searchBy"><a data-ng-mousedown="selectSearchBy(type.name)">{{ type.name }}</a></li>
@@ -62,6 +83,12 @@
 				</form>
 			</div>
 			<div class="column-3">
+			</div>
+		</div>
+		<div class="row">
+			<div class="column-16 align-center">
+				<p><em>or</em></p>
+				<a class="button" data-ng-click="close()">Explore the map</a>
 			</div>
 		</div>
 	</article>

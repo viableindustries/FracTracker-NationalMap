@@ -99,7 +99,7 @@ angular.module('nationalMapApp')
       // Default map center and zoom level when the page loads
       //
       var defaults = $location.search(),
-          zoom = (defaults.zoom) ? defaults.zoom : 4,
+          zoom = (defaults.zoom) ? defaults.zoom : 5,
           lat = (defaults.lat) ? defaults.lat : 39.147,
           lng = (defaults.lng) ? defaults.lng : -96.812;
 

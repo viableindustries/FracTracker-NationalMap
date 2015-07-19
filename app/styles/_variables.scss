@@ -16,10 +16,12 @@ $color-black-base: rgb(36,31,32);
 $color-black-lighter: rgb(96,91,92);
 $color-black-lightest: rgb(126,121,122);
 
-$color-white-base: rgb(245,245,245);
+$color-white-bright: rgb(255,255,255);
+$color-white-base: rgb(242,242,242);
 $color-white-darker: rgb(232,232,232);
 $color-white-dark: rgb(225,225,225);
 
+$color-blue-bright: rgb(0,205,239);
 $color-blue-base: rgb(0,166,204);
 
 $color-green-base: rgb(168,205,61);
@@ -35,8 +37,8 @@ $color-grid-border: rgb(243, 67, 18);
 //
 // Typography Variables
 //
-$font-serif: "Calluna", "Times New Roman", "Times", serif;;
+$font-serif: "Times New Roman", "Times", serif;;
 $font-sans: "brandon-grotesque", "helvetica neue", "helvetica", arial, sans-serif;
-$font-sans-plain: "helvetica neue", "helvetica", arial, sans-serif;
+$font-sans-plain: "Open Sans", "helvetica neue", "helvetica", arial, sans-serif;
 
 

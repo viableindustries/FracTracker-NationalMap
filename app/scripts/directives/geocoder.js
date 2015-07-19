@@ -60,7 +60,7 @@ angular.module('nationalMapApp')
 				map.setView({
 					lat: geocode.center[1],
 					lng: geocode.center[0]
-				}, 18);
+				}, 16);
 			});
 
 			scope.plan.address =
