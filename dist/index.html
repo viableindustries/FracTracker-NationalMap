@@ -1,9 +1,0 @@
-<!doctype html> <html data-ng-app="nationalMapApp" class="no-js"> <head> <meta charset="utf-8"> <!-- Sitewide meta tags --> <meta data-ng-repeat="tag in $root.site.meta" name="{{ tag.name }}" content="{{ tag.content }}"> <!-- Page specific meta tags --> <meta data-ng-repeat="tag in $root.page.meta" name="{{ tag.name }}" content="{{ tag.content }}"> <!-- Page Title based on either the root site title or the page specific site title --> <title>{{ $root.page.title }}{{ $root.site.title }}</title> <link href="//api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css" rel="stylesheet"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/vendor.6f185848.css"> <link rel="stylesheet" href="styles/main.c0eb3ff1.css"> <link data-ng-repeat="link in $root.site.links" rel="{{ link.rel }}" href="{{ link.href }}">  <body> <main data-ng-view=""></main> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');</script> <!--[if lt IE 9]>
-    <script src="scripts/oldieshim.a466b7b1.js"></script>
-    <![endif]--> <script src="scripts/vendor.2494b2d9.js"></script> <script src="//api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js"></script> <script>L.mapbox.accessToken = 'pk.eyJ1IjoiZGV2ZWxvcGVkc2ltcGxlIiwiYSI6IlROYnA5TVkifQ.xYWYVuOeP4wUli32Bnx3cA';</script> <script src="scripts/scripts.aafac59e.js"></script>  
