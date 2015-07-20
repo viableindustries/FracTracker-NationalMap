@@ -117,7 +117,7 @@ angular.module('nationalMapApp')
       });
 
       $scope.$on('leafletDirectiveMarker.click', function(event, args) {
-        $location.path($scope.map.markers[args.markerName].permalink);
+        $location.path($scope.map.markers[args.modelName].permalink);
       });
 
       if (map.getZoom() > 14) {
